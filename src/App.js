@@ -62,6 +62,13 @@ export class App extends Component {
     }));
   }
 
+  loadTodos = (todos) => {
+    this.setState({
+      todos, 
+      nextId: todos.length + 1
+    });
+  }
+
   render() {
     const { todos, filter } = this.state;
 
@@ -79,7 +86,7 @@ export class App extends Component {
           </div>
           <div>
             <Info tasks={todos} />
-            <TodoList tasks={filteredTodos} onToggle={this.toggleTodo} onDelete={this.deleteTodo} />
+            <TodoList tasks={filteredTodos} onToggle={this.toggleTodo} onDelete={this.deleteTodo} onLoad={this.loadTodos} />
           </div>
         </section>
       </div>

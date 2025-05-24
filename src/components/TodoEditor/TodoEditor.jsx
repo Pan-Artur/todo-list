@@ -13,6 +13,7 @@ export class TodoEditor extends Component {
 
   createTask = (e) => {
     e.preventDefault();
+    
     if (this.state.textValue.trim() !== "") {
       this.props.onCreateTask(this.state.textValue);
       this.setState({ textValue: "" });
