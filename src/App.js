@@ -2,6 +2,8 @@ import "./App.css";
 
 import { Component } from "react";
 
+import { Timer } from "./components/Timer/Timer";
+import { OptimizedSum } from "./components/OptimizedSum/OptimizedSum";
 import { Info } from "./components/Info/Info";
 import { TodoEditor } from "./components/TodoEditor/TodoEditor";
 import { Filter } from "./components/Filter/Filter";
@@ -79,6 +81,8 @@ export class App extends Component {
     return (
       <div className="App">
         <h1>Список завдань</h1>
+        <Timer />
+        <OptimizedSum />
         <section>
           <div>
             <TodoEditor onCreateTask={this.createTask} />
